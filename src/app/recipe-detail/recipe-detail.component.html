@@ -1,0 +1,61 @@
+<div *ngIf="recipe" class="container mt-4">
+    <div class="card shadow">
+      <div class="card-header bg-primary text-white">
+        <h2 class="text-center">{{ recipe.title }}</h2>
+      </div>
+      <div class="card-body">
+        <!-- Recipe Description -->
+        <p class="lead">{{ recipe.description }}</p>
+  
+        <!-- Ingredients Section -->
+        <h3>Ingredients</h3>
+        <p class="mb-4">{{ recipe.ingredients }}</p>
+  
+        <!-- Steps Section -->
+        <h3>Steps</h3>
+        <p class="mb-4">{{ recipe.steps }}</p>
+  
+        <!-- Comments Section -->
+        <h4>Comments</h4>
+        <div *ngFor="let comment of recipe.comments" class="mb-2">
+          <p class="border rounded p-2">{{ comment.content }}</p>
+        </div>
+        <div class="input-group mb-3">
+          <textarea
+            [(ngModel)]="newComment"
+            class="form-control"
+            placeholder="Add a comment"
+          ></textarea>
+          <button
+            class="btn btn-success"
+            (click)="addComment()"
+          >
+            Add Comment
+          </button>
+        </div>
+  
+        <!-- Ratings Section -->
+        <h4>Ratings</h4>
+        <div *ngFor="let rating of recipe.ratings" class="mb-2">
+          <p class="border rounded p-2">Rating: {{ rating.rating }}</p>
+        </div>
+        <div class="input-group">
+          <input
+            [(ngModel)]="newRating"
+            type="number"
+            min="1"
+            max="5"
+            class="form-control"
+            placeholder="Rate 1-5"
+          />
+          <button
+            class="btn btn-primary"
+            (click)="addRating()"
+          >
+            Add Rating
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

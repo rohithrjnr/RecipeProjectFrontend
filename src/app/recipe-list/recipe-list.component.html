@@ -1,0 +1,32 @@
+<div class="recipe-list container mt-4">
+    <h2 class="text-center mb-4">Recipe List</h2>
+  
+    <!-- Floating Add Recipe Button -->
+    <button 
+      class="btn btn-primary rounded-circle shadow"
+      style="position: fixed; bottom: 20px; right: 20px; width: 60px; height: 60px; font-size: 24px; display: flex; justify-content: center; align-items: center;"
+      routerLink="/add-recipe"
+      aria-label="Add Recipe"
+    >
+      +
+    </button>
+  
+    <!-- Recipe Cards -->
+    <div class="row">
+      <div *ngFor="let recipe of recipes" class="col-md-4 mb-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <h3 class="card-title">{{ recipe.title }}</h3>
+            <p class="card-text text-truncate" style="max-height: 3em; overflow: hidden;">{{ recipe.description }}</p>
+            <button 
+              class="btn btn-primary mt-2" 
+              routerLink="/recipe/{{ recipe.id }}"
+            >
+              View Recipe
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

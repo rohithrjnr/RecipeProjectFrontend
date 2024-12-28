@@ -1,0 +1,91 @@
+<div class="container mt-5">
+    <div class="card shadow">
+      <div class="card-header bg-primary text-white">
+        <h2 class="text-center">Add New Recipe</h2>
+      </div>
+      <div class="card-body">
+        <form (ngSubmit)="addRecipe()">
+          <!-- Title -->
+          <div class="mb-3">
+            <label for="title" class="form-label">Title:</label>
+            <input
+              type="text"
+              id="title"
+              [(ngModel)]="title"
+              name="title"
+              class="form-control"
+              required
+            />
+          </div>
+  
+          <!-- Description -->
+          <div class="mb-3">
+            <label for="description" class="form-label">Description:</label>
+            <textarea
+              id="description"
+              [(ngModel)]="description"
+              name="description"
+              class="form-control"
+              rows="3"
+              required
+            ></textarea>
+          </div>
+  
+          <!-- Ingredients -->
+          <div class="mb-3">
+            <label for="ingredients" class="form-label">Ingredients:</label>
+            <textarea
+              id="ingredients"
+              [(ngModel)]="ingredients"
+              name="ingredients"
+              class="form-control"
+              rows="3"
+              required
+            ></textarea>
+          </div>
+  
+          <!-- Steps -->
+          <div class="mb-3">
+            <label for="steps" class="form-label">Steps:</label>
+            <textarea
+              id="steps"
+              [(ngModel)]="steps"
+              name="steps"
+              class="form-control"
+              rows="4"
+              required
+            ></textarea>
+          </div>
+  
+          <!-- Category -->
+          <div class="mb-3">
+            <label for="category" class="form-label">Category:</label>
+            <input
+              type="text"
+              id="category"
+              [(ngModel)]="category"
+              name="category"
+              class="form-control"
+              required
+            />
+          </div>
+  
+          <!-- Image URL -->
+          <div class="mb-3">
+            <label for="image_url" class="form-label">Image URL:</label>
+            <input
+              type="text"
+              id="image_url"
+              [(ngModel)]="image_url"
+              name="image_url"
+              class="form-control"
+            />
+          </div>
+  
+          <!-- Submit Button -->
+          <button type="submit" class="btn btn-success w-100">Add Recipe</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  
